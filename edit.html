@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet"
+  href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css">
+  <div>
+     <header> 
+      <h2><a href="/"><i></i> UPDATE A PRODUCT  </a></h2>
+     </header>
+  </div>
+</head>
+<body>
+
+<div class="container">
+  <form id="edit" > 
+    <input type="text" name="productname" placeholder="Unique Product Name" >
+    <input type="number" step="0.01" min=0 name="price" placeholder="Price" >
+    <input type="number" min=0 name="quantity" placeholder="Quantity" >
+    <button id="view"> View All Products </button>
+    <input class="button" type="submit" id="submit" name="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+  document.getElementById("view").onclick = function () {
+      location.href = "http://localhost:3000/view/products";
+  };
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+  $("#edit").submit(function(e) {
+    e.preventDefault(); // prevent actual form submit
+    var form = $('#edit').serializeArray();
+    console.log("serializeArray of the form" + form);
+    var obj = {} ;
+    for (var a = 0; a < form.length; a++) obj[form[a].name] = form[a].value;
+    console.log(obj);
+
+    var url = window.location.pathname;
+    var id = url.substring(url.lastIndexOf('/') + 1);
+    console.log("url id is " + id);
+
+    $.post({
+      type: "POST",
+      url: "/edit/product/" + id,
+      data: obj, 
+      success: function(data){
+          console.log("the url is + " + url);
+          console.log("success the " + data + ".");
+      }
+ });
+
+
+});
+</script>
+  

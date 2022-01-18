@@ -1,0 +1,55 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.13.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "heroku-postbuild": "npm install && npm i bcrypt && cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ftimarah/ shopifyInventory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ftimarah/ shopifyInventory/issues"
+  },
+  "homepage": "https://github.com/ftimarah/ shopifyInventory#readme",
+  "dependencies": {
+    "better-sqlite3": "^7.4.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "heroku": "^7.59.2",
+    "jquery": "^3.6.0",
+    "jquery-serializejson": "^3.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.4.14",
+    "nodemailer-mandrill-transport": "^1.2.0",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.2",
+    "pg-hstore": "^2.3.3",
+    "pool": "^0.4.1",
+    "promise": "^8.1.0",
+    "sequelize": "^6.3.5",
+    "sequelize-auto": "^0.5.4",
+    "sqlite3": "^5.0.2",
+    "styled-components": "^5.2.1",
+    "superagent": "^6.1.0",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "sequelize-cli": "^6.2.0"
+  }
+}

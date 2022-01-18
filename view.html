@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html> 
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet"
+  href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css">
+  <div>
+     <header> 
+      <h2><a href="/"><i></i> VIEW PRODUCTS  </a></h2>
+     </header>
+  </div>
+</head>
+
+<body>
+<div id="table">
+  <table align='center' cellspacing=2 cellpadding=5 border=1>
+      <thead>
+          <th> Select </th>
+          <th> Product ID </th>
+          <th> Product Type </th>
+          <th> Product Name </th>
+          <th> Quantity </th> 
+          <th> Price </th>
+      </thead>
+      <tbody id="productTable">
+      </tbody>
+  </table>
+
+  <button id="view"> Export All Products to CSV File </button>
+  <input type="button" id="edit" value="Edit Product" > </input>
+  <input type="button" id="delete" value="Delete Product" onClick="refreshPage()"; > </input>
+
+</div>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+  $.get('/view/product', {}, function(results) {
+    let res = '';
+    results.data.orders.forEach(data => {
+      var value = data.productid ;
+      console.log(value);
+      res += `<tr><td><input type="checkbox" id="${value}" required name="checkbx" value="${value}" onclick=handleClick(this);>\
+    </div>\</td><td>${data.productid}</td><td>${data.producttype}</td><td>${data.productname}</td><td>${data.quantity}</td><td>${data.price}</td></tr>`
+   
+    });
+    $('#productTable').html(res)
+    });
+
+    function handleClick(cb) {
+      console.log("Clicked, new value = " + cb.checked + "\n " + cb.id);
+      $('input[type="checkbox"]').on('change', function() {
+        $('input[type="checkbox"]').not(this).prop('checked', false);
+      });
+
+      if (cb.checked == true) {
+        document.getElementById('edit').onclick = function (event) {
+            location.href = "http://localhost:3000/edit/" + cb.id  ;
+        }
+        document.getElementById('delete').onclick = function (event){
+          $.post({
+            type: "POST",
+            url: "/delete/product/" + cb.id
+           });
+          } 
+        }  
+      }
+
+      function refreshPage() {
+        window.location.reload();
+      }
+
+</script>
+
+<script>
+
+function htmlToCSV(html, filename) {
+	var data = [];
+	var rows = document.querySelectorAll("table tr");
+			
+	for (var i = 0; i < rows.length; i++) {
+		var row = [], cols = rows[i].querySelectorAll("td, th");
+				
+		for (var j = 0; j < cols.length; j++) {
+		        row.push(cols[j].innerText);
+        }
+		        
+		data.push(row.join(",")); 		
+	}
+	downloadCSVFile(data.join("\n"), filename);
+}
+</script>
+
+<script>
+  function downloadCSVFile(csv, filename) {
+    var csv_file, download_link;
+  
+    csv_file = new Blob([csv], {type: "text/csv"});
+  
+    download_link = document.createElement("a");
+  
+    download_link.download = filename;
+  
+    download_link.href = window.URL.createObjectURL(csv_file);
+  
+    download_link.style.display = "none";
+  
+    document.body.appendChild(download_link);
+  
+    download_link.click();
+  }
+  </script>
+
+  <script>
+    document.getElementById("view").addEventListener("click", function () {
+      var html = document.querySelector("table").outerHTML;
+      htmlToCSV(html, "EphoraSkincareViewAllProducts.csv");
+    });
+  </script>
+
+ 
+
