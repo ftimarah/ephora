@@ -1,4 +1,5 @@
-Checkout my submission for the Shopify Backend Developer Challenge for Summer 2022 at https://ephora.herokuapp.com/view/products ! 
+Checkout my submission for the Shopify Backend Developer Challenge for Summer 2022 at https://ephora.herokuapp.com/ 
+
 
 Welcome to Ephora Skincare's Inventory System. 
 
