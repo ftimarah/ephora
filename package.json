@@ -9,7 +9,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "heroku-postbuild": "npm install && npm i bcrypt && cd client && npm install && npm run build"
+
   },
   "repository": {
     "type": "git",
