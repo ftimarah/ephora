@@ -19,7 +19,9 @@ route.post("/products", async function (req, res) {
       ]
     );
     console.log(results);
-    res.status(200).send("Product profile created succesfully. Click <a href=\"https://ephora.herokuapp.com/\">here ephora</a> or here <a href=\"http://localhost:3000/\">here homepage</a> to get back to the home page :) ");
+    //res.status(200).send("Product profile created succesfully. Click here <a href=\"http://localhost:3000/\">here homepage</a> to get back to the home page :) ");
+    res.status(200).send("Product profile created succesfully. Click <a href=\"https://ephora.herokuapp.com/\">here ephora</a> to get back to the home page :) ");
+
   } catch (err) {
     console.log(err);
     //console.log("something went wrong");
