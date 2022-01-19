@@ -19,7 +19,7 @@ route.post("/products", async function (req, res) {
       ]
     );
     console.log(results);
-    res.status(200).send("Product profile created succesfully. Click <a href=\"http://localhost:3000/\">here</a>  to get back to the home page :) ");
+    res.status(200).send("Product profile created succesfully. Click <a href=\"https://ephora.herokuapp.com/\">here</a>  to get back to the home page :) ");
 
 
   } catch (err) {
@@ -42,7 +42,6 @@ route.post("/products", async function (req, res) {
             orders: results.rows,
           },
         });
-        res.sendFile('view.html', { root: __dirname });
       } catch (err) {
           console.log(err);
       }
