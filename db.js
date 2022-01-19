@@ -1,20 +1,12 @@
 const Pool = require('pg').Pool
 require("dotenv").config();
 
-// const devConfig = {
-//   user: PG_USER,
-//   host: PG_HOST,
-//   database: PG_DATABASE,
-//   password: PG_PASSWORD,
-//   port: PG_PORT,
-// };
-
 const devConfig = {
-  user: "me",
-  host: "localhost",
-  database: "inventorystore",
-  password: "password",
-  port: 5432,
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DATABASE,
+  password: process.env.PG_PASSWORD,
+  port: process.env.PG_PORT,
 };
 
 const proConfig = {

@@ -5,13 +5,15 @@
   "main": "index.js",
   "engines": {
     "node": "12.14.1",
-    "npm": "6.13.6"
+    "npm": "6.13.6",
+    "name": "ephora",
+    "description": "a really cool app",
+    "version": "1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "heroku-postbuild": "npm install && npm i bcrypt && cd client && npm install && npm run build"
-
   },
   "repository": {
     "type": "git",
@@ -31,7 +33,6 @@
     "dotenv": "^8.6.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
-    "heroku": "^7.59.2",
     "jquery": "^3.6.0",
     "jquery-serializejson": "^3.2.1",
     "jsonwebtoken": "^8.5.1",
