@@ -1,47 +1,36 @@
 Welcome to Ephora Skincare's Inventory System. 
-This system allows you to create, update, view, and delete inventory products.The links are established as follows: Create Products redirects you to a form to input information for a new product. View All Products redirects you to a page to view all existing inventory, and allows you to edit existing information about a product, to delete a product, and to export the entire table to a CSV file.
+
+This is my submission for the Shopify Backend Developer Challenge for Summer 2022.
+
+Ephora Skincare is a website that provides a diverse range of skincare catered to all ages and skin types.
+
+This inventory system is to help track the products that Ephora Skincare sells on their website.
+
+I've developed a basic web app that mimics an inventory system. You are able to create new products where you create its name, price, and quantity. Upon creating a new product, you can edit its parameters via the "Edit Button" by redirecting to the homepage and by clicking the "View All Prodcuts". In this page, you can view all the products existing in the inventory system, choose to delete a single item by clicking the "Delete Product" button, or export the current inventory into a csv file by clicking "Export Products to CSV file".
+
+Stack:
+
+Client: Html, jquery, JavaScript
+Server: Node.js, Express.js, PostgreSQL, JavaScript, Heroku (for hosting)
+
+As time goes on I will continue to improve this application particularly:
+
+- Making the system more detailed by adding:
+    - orders: view customer orders, change the quantity of product in the inventory system based off customer orders/transactions
+    - supplier documentation: location, origin, and supplier of products to be sold.
+    - adding a filter element, categorizing by the product type, ex. filter by day cream, cleanser, sunscreen, night cream. Also by min/max price, and min/max quantity
+
+Features (and issues) of the App
+
+When creating a new product in the create products page, you will notice that each product name is unique from each other. Duplicate names are not accepted and thus you will not be able to submit the form data successfully (on clicking the submit button). An improvement can be made here from the client side, such as adding an error message on clicking submit to notify the user that the chose name already exists in the system (database).
+
+When updating a products information, all the inputs must be utilized. This obviously inefficient in the case that the user would want to update specific paramters, i.e. updating the price only of the product. The solution for this would be to make the inputs optional, so upon clicking submit, null values will be checked and not accounted for when updating the database with the respective product.
+
+Both quantity and price values begin at minimum of 0, as negative values do not make sense in this setting. 
+
+Everything else works fine for a super duper basic app :)
 
 
-How to replicate this environment on your own:
 
-1. Install home-brew
-2. brew install postgresql 
-3. brew services start postgresql
-4. psql postgres
-5. postgres=# \conninfo
-6. postgres=# CREATE ROLE me WITH LOGIN PASSWORD 'password';
-7. postgres=# ALTER ROLE me CREATEDB;
-8. postgres=# \q
-9. psql -d postgres -U me
-10. postgres=> CREATE DATABASE inventorystore;
-11. postgres=> \c inventorystore;
-12. You are now connected to database "inventorystore" as user "me".
-    inventorystore=>
 
-13. go into db.sql
-14. copy the table listed
-    CREATE TABLE products ( 
-        productid serial PRIMARY KEY,
-        productname VARCHAR (255) UNIQUE ,
-        producttype VARCHAR (255),
-        price FLOAT NOT NULL,
-        quantity  INT NOT NULL,
-        createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
-        updatedAt timestamp DEFAULT CURRENT_TIMESTAMP
-    );
-
-15. continuing back into terminal of inventorystore, past the copied table
-16. inventorystore=> CREATE TABLE products ( 
-        productid serial PRIMARY KEY,
-        productname VARCHAR (255) UNIQUE ,
-        producttype VARCHAR (255),
-        price FLOAT NOT NULL,
-        quantity  INT NOT NULL,
-        createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
-        updatedAt timestamp DEFAULT CURRENT_TIMESTAMP
-    );
-17. in a new terminal initalize express, and node-postgres servers
-18. npm i express pg
-19. node index.js or npm start
-20. Now if you go to http://localhost:3000/ you'll see Ephora Skincare!
 

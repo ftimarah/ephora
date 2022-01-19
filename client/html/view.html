@@ -68,10 +68,10 @@
             type: "POST",
             url: "/delete/product/" + cb.id
            });
-          } 
+           refreshPage(); 
+          }
         }  
       }
-
       function refreshPage() {
         window.location.reload();
       }
