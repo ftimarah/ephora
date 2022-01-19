@@ -1,3 +1,44 @@
+---- db version 2 
+
+CREATE TABLE products ( 
+    productid serial PRIMARY KEY,
+    productname VARCHAR (255) UNIQUE ,
+    producttype VARCHAR (255),
+    price FLOAT NOT NULL,
+    quantity  INT NOT NULL,
+    createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
+    updatedAt timestamp DEFAULT CURRENT_TIMESTAMP
+);
+
+-- CREATE TABLE orders (
+--     orderID INT NOT NULL PRIMARY KEY,
+--     productName VARCHAR (255) NOT NULL,
+--     quantity INT NOT NULL,
+--     price  FLOAT NOT NULL,
+--     createdAt timestamp DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- CREATE TABLE supplier ( 
+--     supplierID INT NOT NULL PRIMARY KEY,
+--     supplierName VARCHAR (255) NOT NULL,
+--     country VARCHAR (255) NOT NULL,
+--     productID INT NOT NULL REFERENCES product(productID),
+--     quantity INT NOT NULL,
+--     createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
+--     updatedAt timestamp DEFAULT CURRENT_TIMESTAMP
+-- );
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- -- 1, rave wash, 15 cad, 25, facewash, total units as of today
 -- -- 2, rave acne wash , 15 cad, 25, facewash, total units as of today
@@ -65,48 +106,3 @@
 -- --     updatedAt timestamp DEFAULT CURRENT_TIMESTAMP,
 
 -- -- )
-
----- db version 2 
-
--- CREATE TABLE product ( 
---     productid serial PRIMARY KEY,
---     productname VARCHAR (255) UNIQUE,
---     producttype VARCHAR (255),
---     price FLOAT NOT NULL,
---     quantity  INT NOT NULL,
---     createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
---     updatedAt timestamp DEFAULT CURRENT_TIMESTAMP
--- );
-
-CREATE TABLE products ( 
-    productid serial PRIMARY KEY,
-    productname VARCHAR (255) UNIQUE ,
-    producttype VARCHAR (255),
-    price FLOAT NOT NULL,
-    quantity  INT NOT NULL,
-    createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
-    updatedAt timestamp DEFAULT CURRENT_TIMESTAMP
-);
-
-insert into products (productname, price, quantity, producttype) values ('balancing', 12.99, 12,'cleanser');
--- CREATE TABLE orders (
---     orderID INT NOT NULL PRIMARY KEY,
---     productName VARCHAR (255) NOT NULL,
---     quantity INT NOT NULL,
---     price  FLOAT NOT NULL,
---     createdAt timestamp DEFAULT CURRENT_TIMESTAMP
--- );
-
--- CREATE TABLE supplier ( 
---     supplierID INT NOT NULL PRIMARY KEY,
---     supplierName VARCHAR (255) NOT NULL,
---     country VARCHAR (255) NOT NULL,
---     productID INT NOT NULL REFERENCES product(productID),
---     quantity INT NOT NULL,
---     createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
---     updatedAt timestamp DEFAULT CURRENT_TIMESTAMP
--- );
-
--- currently can process 1 product per order, and cannot update a unique order
--- customer identity not logged either 
-
