@@ -102,7 +102,7 @@ route.post("/products", async function (req, res) {
   
       res.status(200).send("delete req Was Successful :)");
     } catch (err) {
-      //console.log(err);
+      console.log(err);
       res
         .status(400)
         .send(

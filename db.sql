@@ -10,6 +10,8 @@ CREATE TABLE products (
     updatedAt timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
+insert into products (productname, producttype, price, quantity) values ('Good Morning Cleasner', 'cleanser', 12.99, 15);
+
 -- CREATE TABLE orders (
 --     orderID INT NOT NULL PRIMARY KEY,
 --     productName VARCHAR (255) NOT NULL,
