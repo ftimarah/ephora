@@ -19,9 +19,7 @@ route.post("/products", async function (req, res) {
       ]
     );
     console.log(results);
-    res.status(200).send("Product profile created succesfully. Click <a href=\"https://ephora.herokuapp.com/\">here</a>  to get back to the home page :) ");
-
-
+    res.status(200).send("Product profile created succesfully. Click <a href=\"https://ephora.herokuapp.com/\">here ephora</a> or here <a href=\"http://localhost:3000/\">here homepage</a> to get back to the home page :) ");
   } catch (err) {
     console.log(err);
     //console.log("something went wrong");
@@ -47,6 +45,24 @@ route.post("/products", async function (req, res) {
       }
     });   
     
+    // view info of a specific product - http get request
+    route.get("/view/product/:id", async function (req, res) {
+    
+      try {
+        const results = await db.query("SELECT * FROM products WHERE productid = $1", [req.params.id]);
+        res.status(200).json({
+          status: "success",
+          results: results.rows.length,
+          data: {
+            orders: results.rows,
+          },
+        });
+      } catch (err) {
+        console.log(err);
+        //console.log("something went wrong");
+      }
+  }); 
+
     //edit routes 
 
     // edit post http - deposits info into db given specific id 

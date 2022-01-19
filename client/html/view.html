@@ -46,9 +46,7 @@
     results.data.orders.forEach(data => {
       var value = data.productid ;
       console.log(value);
-      res += `<tr><td><input type="checkbox" id="${value}" required name="checkbx" value="${value}" onclick=handleClick(this);>\
-    </div>\</td><td>${data.productid}</td><td>${data.producttype}</td><td>${data.productname}</td><td>${data.quantity}</td><td>${data.price}</td></tr>`
-   
+      res += `<tr><td><input type="checkbox" id="${value}" required name="checkbx" value="${value}" onclick=handleClick(this);></td><td>${data.productid}</td><td>${data.producttype}</td><td>${data.productname}</td><td>${data.quantity}</td><td>${data.price}</td></tr>`
     });
     $('#productTable').html(res)
     });
@@ -61,7 +59,7 @@
 
       if (cb.checked == true) {
         document.getElementById('edit').onclick = function (event) {
-            location.href = "https://ephora.herokuapp.com/edit/" + cb.id  ;
+            location.href = "http://localhost:3000/edit/" + cb.id  ;
         }
         document.getElementById('delete').onclick = function (event){
           $.post({
