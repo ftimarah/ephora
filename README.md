@@ -1,10 +1,8 @@
+Checkout my submission for the Shopify Backend Developer Challenge for Summer 2022 at https://ephora.herokuapp.com/view/products ! 
+
 Welcome to Ephora Skincare's Inventory System. 
 
-This is my submission for the Shopify Backend Developer Challenge for Summer 2022.
-
-Ephora Skincare is a website that provides a diverse range of skincare catered to all ages and skin types.
-
-This inventory system is to help track the products that Ephora Skincare sells on their website.
+Ephora Skincare is a website that provides a diverse range of skincare catered to all ages and skin types. This inventory system is to help track the products that Ephora Skincare sells on their website.
 
 I've developed a basic web app that mimics an inventory system. You are able to create new products where you create its name, price, and quantity. Upon creating a new product, you can edit its parameters via the "Edit Button". Then by redirecting to the homepage and by clicking the "View All Prodcuts" you can see the latest updates. Also, in this this page, you can view all the products in the inventory system, choose to delete a single item by clicking the "Delete Product" button, and/or export the current inventory data into a csv file by clicking "Export Products to CSV file".
 

@@ -60,7 +60,7 @@
       if (cb.checked == true) {
         document.getElementById('edit').onclick = function (event) {
            // location.href = "http://localhost:3000/edit/" + cb.id  ;
-           location.href = "https://ephora.herokuapp.com/view/products" + cb.id; 
+           location.href = "https://ephora.herokuapp.com/edit" + cb.id; 
         }
         document.getElementById('delete').onclick = function (event){
           $.post({
