@@ -2,6 +2,8 @@
 
 # Checkout my submission for the Shopify Backend Developer Challenge for Summer 2022 at https://ephora.herokuapp.com/ :) 
 
+*** heroku database right now is read only because of maintenance issues but I assure you it works, maintenance will be done soon, heroku apparently does this for the free tiers. January 20 2022 5:50pm
+
 Welcome to Ephora Skincare's Inventory System. 
 
 Ephora Skincare is a website that provides a diverse range of skincare catered to all ages and skin types. This is the inventory system to help track the products that Ephora Skincare sells on their website.
