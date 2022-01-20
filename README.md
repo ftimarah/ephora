@@ -1,6 +1,6 @@
-https://jobs.smartrecruiters.com/Shopify/743999796499290-backend-developer-intern-summer-2022-remote-us-canada-
+# https://jobs.smartrecruiters.com/Shopify/743999796499290-backend-developer-intern-summer-2022-remote-us-canada-
 
-Checkout my submission for the Shopify Backend Developer Challenge for Summer 2022 at https://ephora.herokuapp.com/ :) 
+# Checkout my submission for the Shopify Backend Developer Challenge for Summer 2022 at https://ephora.herokuapp.com/ :) 
 
 Welcome to Ephora Skincare's Inventory System. 
 
