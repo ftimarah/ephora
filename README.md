@@ -2,7 +2,10 @@
 
 # Checkout my submission for the Shopify Backend Developer Challenge for Summer 2022 at https://ephora.herokuapp.com/ :) 
 
-*** heroku database right now is read only because of maintenance issues but I assure you it works, maintenance will be done soon, heroku apparently does this for the free tiers. January 20 2022 5:50pm
+A demo video of the app: https://drive.google.com/file/d/1dmQF6WX31skw20CsxOCmT1274VZ_PG5G/view?usp=sharing
+
+* heroku database right now is read only because of maintenance issues but I assure you it works, maintenance will be done soon, heroku apparently does this for the free tiers. January 20 2022 5:50pm
+** update maintenance is done so everything is back to normal. (Maintenance results in the database to become read only.) Jan 20 7:16pm
 
 Welcome to Ephora Skincare's Inventory System. 
 
