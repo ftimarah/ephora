@@ -1,5 +1,7 @@
 A demo video of the app: https://drive.google.com/file/d/1dmQF6WX31skw20CsxOCmT1274VZ_PG5G/view?usp=sharing
 
+Link to the app: https://ephora.herokuapp.com/
+
 * heroku database right now is read only because of maintenance issues but I assure you it works, maintenance will be done soon, heroku apparently does this for the free tiers. January 20 2022 5:50pm
 ** update maintenance is done so everything is back to normal. (Maintenance results in the database to become read only.) Jan 20 7:16pm
 
