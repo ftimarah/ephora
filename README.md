@@ -2,12 +2,12 @@ A demo video of the app: https://drive.google.com/file/d/1dmQF6WX31skw20CsxOCmT1
 
 Link to the app: https://ephora.herokuapp.com/
 
-* heroku database right now is read only because of maintenance issues but I assure you it works, maintenance will be done soon, heroku apparently does this for the free tiers. January 20 2022 5:50pm
+* heroku database right now is read only because of maintenance issues. 
 ** update maintenance is done so everything is back to normal. (Maintenance results in the database to become read only.) Jan 20 7:16pm
 
 Welcome to Ephora Skincare's Inventory System. 
 
-Ephora Skincare is a website that provides a diverse range of skincare catered to all ages and skin types. This is the inventory system to help track the products that Ephora Skincare sells on their website.
+Ephora Skincare prides itself in having a diverse range of skincare catered to all ages and skin types. This is the inventory system to help track the products that Ephora Skincare sells on their website.
 
 I've developed a basic web app that mimics an inventory system. You are able to create new products where you create its name, price, and quantity. Upon creating a new product, you can edit its parameters via the "Edit Button". Then by redirecting to the homepage and by clicking the "View All Prodcuts" you can see the latest updates. Also, in this this page, you can view all the products in the inventory system, choose to delete a single item by clicking the "Delete Product" button, and/or export the current inventory data into a csv file by clicking "Export Products to CSV file".
 
